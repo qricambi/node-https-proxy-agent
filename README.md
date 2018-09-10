@@ -1,6 +1,6 @@
 https-proxy-agent
 ================
-### An HTTP(s) proxy `http.Agent` implementation for HTTPS
+### An HTTP(s) proxy `http.Agent` implementation for HTTPS - with custom socket option
 [![Build Status](https://travis-ci.org/TooTallNate/node-https-proxy-agent.svg?branch=master)](https://travis-ci.org/TooTallNate/node-https-proxy-agent)
 
 This module provides an `http.Agent` implementation that connects to a specified
