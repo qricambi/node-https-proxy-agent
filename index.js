@@ -65,16 +65,19 @@ inherits(HttpsProxyAgent, Agent);
  *
  * @api public
  */
+HttpsProxyAgent.prototype.createConnection = function(){
+  return null;
+}
 
 HttpsProxyAgent.prototype.callback = function connect(req, opts, fn) {
   var proxy = this.proxy;
 
   // create a socket connection to the proxy server
-  var socket;
+  var socket = this.createConnection()
   if (this.secureProxy) {
-    socket = tls.connect(proxy);
+    socket = socket || tls.connect(proxy);
   } else {
-    socket = net.connect(proxy);
+    socket = socket || net.connect(proxy);
   }
 
   // we need to buffer any HTTP traffic that happens with the proxy before we get
